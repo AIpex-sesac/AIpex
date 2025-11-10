@@ -1,12 +1,14 @@
 # Project AIpex
 
-* AI Object Detection 탑재된 스마트 헬맷 올빼미 개발
+* AI Object Detection이 탑재된 스마트 헬맷 올빼미 개발
+
+<img src="https://github.com/AIpex-sesac/AIpex/blob/main/sources/concept_art.png?raw=true"/>
 
 ## High Level Design
 
 * TBD
-* 헬멧에 스크린을 통해 Object Detection과 그 값을 이용한 증강현실 기술 구현하여 사용자에게 보여줌
-* 도로 상태, 후면 표시 등 자동차에 탑재되어 있는 기능 등을 헬멧에 탑재
+* 헬멧의 스크린을 통해 Object Detection과 그 값을 활용한 증강현실을 착용자에게 제공
+* 네비게이션, 후방 카메라 등 자동차에 탑재되어 있는 편의기능을 헬멧에 탑재
 ## Clone code
 
 * (각 팀에서 프로젝트를 위해 생성한 repository에 대한 code clone 방법에 대해서 기술)
@@ -56,5 +58,19 @@ python demo.py -i xxx -m yyy -d zzz
 ![./result.jpg](./result.jpg)
 
 ## Appendix
-
+```mermaid
+flowchart LR
+    A[Camera] -->|영상 촬영| B[pi]
+    B -->|영상 제공| C[AI model]
+    C -->|Object Detection| D[result]
+    D -->|결과 출력| E[(Display)]
+```
 * (참고 자료 및 알아두어야할 사항들 기술)
+
+## 팀원 소개 및 역할 분담
+  | Name | Role |
+  |----|----|
+  | 남대문 | Presentation prepare |
+  | 성시경 | Data management |
+  | 장태규 | Project lead, Architect |
+  | 최종인 | UI design |
