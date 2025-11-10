@@ -4,8 +4,9 @@
 
 ## Concept arts
 
-<img src="https://github.com/AIpex-sesac/AIpex/blob/main/sources/concept_art.png?raw=true" width="300px"/>
-![concept demo](https://github.com/AIpex-sesac/AIpex/blob/main/sources/concept_video.gif?raw=true)
+<img src="https://github.com/AIpex-sesac/AIpex/blob/main/sources/concept_art.png?raw=true" width="350px"/>
+
+![concept demo](https://github.com/AIpex-sesac/AIpex/blob/main/sources/concept_video.gif)
 
 ## High Level Design
 
