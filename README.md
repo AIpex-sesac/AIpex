@@ -3,10 +3,9 @@
 * AI Object Detection이 탑재된 스마트 AI 헬멧 올빼미 개발
 
 ## Concept arts
-
-<img src="./sources/concept_art.png?raw=true" width="350px"/>
-
-![concept demo](./sources/concept_video.gif)
+  |||
+  |----|----|
+  |<img src="./sources/concept_art.png?raw=true" width="350px"/>|![concept demo](./sources/concept_video.gif)|
 
 ## 핵심내용
 
@@ -70,18 +69,19 @@ python demo.py -i xxx -m yyy -d zzz
 ## Output
 
 * (프로젝트 실행 화면 캡쳐)
-* 현재 샘플 디자인
+
+## Design
 ### 헬멧 부착물 개별 이미지
-![./sample1.jpg](./sources/design_sample1.png)
-![sample demo](./sources/sample_video.gif)
-![./sample2.jpg](./sources/design_sample2.png)
+  |||
+  |----|----|
+  |![./sample1.jpg](./sources/design_sample1.png)|![sample demo](./sources/sample_video.gif)|
+  |![./sample2.jpg](./sources/design_sample2.png)||
+
 ### 헬멧 전체 이미지
-![./helmet1.jpg](./sources/helmet_design1.png)
-![./helmet2.jpg](./sources/helmet_design2.png)
-![./helmet3.jpg](./sources/helmet_design3.png)
-![./helmet4.jpg](./sources/helmet_design4.png)
-![./helmet5.jpg](./sources/helmet_design5.png)
-![./helmet6.jpg](./sources/helmet_design6.png)
+  ||||
+  |----|----|----|
+  |![./helmet1.jpg](./sources/helmet_design1.png)|![./helmet2.jpg](./sources/helmet_design2.png)|![./helmet3.jpg](./sources/helmet_design3.png)|
+  |![./helmet4.jpg](./sources/helmet_design4.png)|![./helmet5.jpg](./sources/helmet_design5.png)|![./helmet6.jpg](./sources/helmet_design6.png)|
 
 ## Appendix
 ```mermaid
