@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package compute;
+
+import "data_types.proto";
+
+service ComputeService {
+    rpc Datastream(stream Command) returns (stream ServerMessage);
+}
