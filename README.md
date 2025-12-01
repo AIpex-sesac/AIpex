@@ -5,7 +5,7 @@
   | 남대문 | Development ||
   | 성시경 | Data management, 3D Modeling ||
   | 장태규 | Project lead, Architect |[Firmware](https://github.com/AIpex-sesac/AIpex_fw)|
-  | 최종인 | UI design, Development |[App](https://github.com/AIpex-sesac/AIpex_app)|
+  | 최종인 | UI design, App Development |[App](https://github.com/AIpex-sesac/AIpex_app)|
 
 ## 개요
 <img src="./sources/logo/logo_2.svg?raw=true" width="200px"/>
@@ -31,38 +31,17 @@
 ## 제안배경 및 목적
 * 최근 AI 기술의 급격한 발전은 다양한 산업 분야에 혁신적인 변화를 가져왔으며, 그중에서도 **자동차 산업**이 가장 큰 영향을 받고 있음. 이로 인해 글로벌 기업들은 **자율주행 기술, AI 음성인식, 스마트 크루즈 컨트롤, 긴급 자동 제동 시스템(AEB)** 등 첨단 AI 기능을 차량에 적용하여 운전자 편의성과 안전성을 크게 향상.
 * 이러한 자동차 산업의 변화에 주목한 저희 팀은, **AI 기술이 제공하는 편의성과 안전 기능을 자동차 이외의 이동수단에도 확대 적용할 수 없을까**라는 문제의식에서 기획 출발. 거기에 더해 종로 캠퍼스에서 배운 임베디드 기술 또한 유용하게 활용하여 AI, 임베디드 등의 모든 기술을 담은 서비스를 기획.
-* 다양한 논의 끝에, **AI 주행보조 기술을 탑재한 AR 헬멧**이라는 솔루션을 기획하였으며, 이를 통해 오토바이, 자전거 등 다양한 개인 이동수단 이용자에게 **보다 안전하고 편리한 주행 환경을 제공**하는 것을 목표로 본 프로젝트를 추진.
+* 다양한 논의 끝에, **Edge AI 주행보조 기술을 탑재한 AR 헬멧**이라는 솔루션을 기획하였으며, 이를 통해 오토바이, 자전거 등 다양한 개인 이동수단 이용자에게 **보다 안전하고 편리한 주행 환경을 제공**하는 것을 목표로 본 프로젝트를 추진.
 
-## Process Flow Diagram (흐름도)
-```mermaid
-flowchart TB
-  %% Outer system
-  subgraph System["Helmet"]
-    %% Left module (Pi1 side / HMD)
-    subgraph HMD_Module["HMD Module"]
-      FrontCam[Front Camera]
-      RearCam[Rear Camera]
-      FrontCam -->|Front Video| Pi1
-      RearCam -->|Rear Video| Pi1
-      Pi1 -->|Result Video| Display
-    end
+## Architecture Diagram (시스템 구성도)
+<img src="./sources/flowChart.png?raw=true"/>
 
-    %% Right module (Pi2 / AI)
-    subgraph AI_Module["AI Module"]
-      Pi2 -->|Raw Data| NPU
-      NPU -->|Object Detection| Pi2
-      NPU -->|Collision Warning| Pi2
-      Pi1 -->|Raw Data Video| Pi2
-      Pi2 -->|Processed Data| Pi1
-    end
-  end
-  Display --> |Information| User
-  User --> |Search| SmartPhone
-  SmartPhone[Smart Phone] -->|Navigation| Pi2
-  User@{ shape: cyl}
-  SmartPhone@{ shape: h-cyl}
-```
+## Process Flow Diagram (주요 기능 흐름도)
+<img src="./sources/flowchart2.png?raw=true"/>
+
 ## 제품 디자인
+FreeCad를 사용하여 MVP에 사용할 제품 모델링 직접 구현.
+
 ### 헬멧 부착물 개별 이미지
   |||
   |----|----|
@@ -191,7 +170,7 @@ python demo.py -i xxx -m yyy -d zzz
 * 실제 자전거 이용 중의 상황을 데이터로 학습시키기 위하여 자전거 주행 중 영상을 직접 촬영하여 데이터로 활용. 전방/후방 2종류의 영상을 촬영.
 * 촬영된 영상 데이터를 초당 1컷으로 분할하여 사진 데이터로 변환.
 ### Model
-* YoloX
+* YOLOv8
 * 실시간 영상에 대응하기 위해 처리속도가 빠른 모델 채용
 ### Classes
 1. bike
@@ -199,10 +178,11 @@ python demo.py -i xxx -m yyy -d zzz
 3. car
 
 ## 참고자료
-* (참고 자료 및 알아두어야할 사항들 기술)
-
-## Google Drive
-
-```shell
-https://drive.google.com/drive/folders/1Qj72MTF6LtFqe8MISK7nzGTvX0vuPtUF?usp=drive_link
-```
+* 네이버 클라우드 API 가이드 (https://api.ncloud-docs.com/docs/home)
+* Hailo_Model_Zoo (https://github.com/hailo-ai/hailo_model_zoo)
+* GRPC 공식 문서 (https://grpc.io/docs)
+* HailoRT (https://github.com/hailo-ai/hailort)
+* NAVER Map Compose (https://github.com/fornewid/naver-map-compose)
+* Min sam (https://www.youtube.com/@minsam7010)
+* 전자공시시스템 (https://dart.fss.or.kr)
+* 2024년 교통사고정보 (출처 : 도로교통공단)
