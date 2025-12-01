@@ -1,0 +1,602 @@
+[1:00:28.505182381] [4592] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[1:00:28.515118036] [4606] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[1:00:28.518195445] [4606] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[1:00:28.525097044] [4606] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[1:00:28.525130970] [4606] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media0 and ISP device /dev/media3 using PiSP variant BCM2712_D0
+[1:00:28.525175785] [4606] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[1:00:28.526699591] [4606] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[1:00:28.533734135] [4606] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[1:00:28.533766950] [4606] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media1 and ISP device /dev/media4 using PiSP variant BCM2712_D0
+[1:00:28.536751043] [4592] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 1640x1232-BGGR_PISP_COMP1/RAW
+[1:00:28.536962489] [4606] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[1:00:29.081674507] [4592] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 1640x1232-BGGR_PISP_COMP1/RAW
+[1:00:29.081790952] [4606] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764122114.912643    4653 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+[1:00:58.847488574] [4771] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[1:00:58.857256765] [4782] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[1:00:58.860190987] [4782] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[1:00:58.867234513] [4782] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[1:00:58.867267310] [4782] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media0 and ISP device /dev/media3 using PiSP variant BCM2712_D0
+[1:00:58.867313051] [4782] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[1:00:58.868853227] [4782] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[1:00:58.875771641] [4782] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[1:00:58.875802401] [4782] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media1 and ISP device /dev/media4 using PiSP variant BCM2712_D0
+[1:00:58.878699567] [4771] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 1640x1232-BGGR_PISP_COMP1/RAW
+[1:00:58.878806864] [4782] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[1:00:59.437626974] [4771] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 1640x1232-BGGR_PISP_COMP1/RAW
+[1:00:59.437835475] [4782] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764122145.263793    4812 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+[0:34:25.048205422] [3099] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[0:34:25.058367993] [3110] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[0:34:25.061309196] [3110] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[0:34:25.068164819] [3110] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[0:34:25.068197875] [3110] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media3 and ISP device /dev/media0 using PiSP variant BCM2712_D0
+[0:34:25.068245524] [3110] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[0:34:25.069757302] [3110] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[0:34:25.076773723] [3110] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[0:34:25.076805112] [3110] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media4 and ISP device /dev/media1 using PiSP variant BCM2712_D0
+[0:34:25.079721204] [3099] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 1640x1232-BGGR_PISP_COMP1/RAW
+[0:34:25.079829001] [3110] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[0:34:25.638404577] [3099] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 1640x1232-BGGR_PISP_COMP1/RAW
+[0:34:25.638540208] [3110] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764222405.058469    3140 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+Exception ignored in: <generator object BoardTransmission._request_generator at 0x7fff0e604540>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 979, in run
+    del self._target, self._args, self._kwargs
+        ^^^^^^^^^^^^
+RuntimeError: generator ignored GeneratorExit
+[0:42:05.148264334] [3297] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[0:42:05.158025546] [3308] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[0:42:05.160979658] [3308] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[0:42:05.168088741] [3308] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[0:42:05.168119223] [3308] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media3 and ISP device /dev/media0 using PiSP variant BCM2712_D0
+[0:42:05.168167871] [3308] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[0:42:05.169698326] [3308] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[0:42:05.176706094] [3308] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[0:42:05.176735538] [3308] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media4 and ISP device /dev/media1 using PiSP variant BCM2712_D0
+[0:42:05.179731317] [3297] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 1640x1232-BGGR_PISP_COMP1/RAW
+[0:42:05.179828429] [3308] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[0:42:05.721508128] [3297] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 1640x1232-BGGR_PISP_COMP1/RAW
+[0:42:05.721619239] [3308] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764222864.855848    3337 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+[0:33:35.801627314] [4979] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[0:33:35.811890917] [4990] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[0:33:35.814826063] [4990] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[0:33:35.821675483] [4990] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[0:33:35.821708872] [4990] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media1 and ISP device /dev/media3 using PiSP variant BCM2712_D0
+[0:33:35.821755687] [4990] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[0:33:35.823274241] [4990] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[0:33:35.830313977] [4990] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[0:33:35.830344606] [4990] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media2 and ISP device /dev/media4 using PiSP variant BCM2712_D0
+[0:33:35.833491271] [4979] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[0:33:35.833604530] [4990] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[0:33:36.396255727] [4979] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[0:33:36.396467467] [4990] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764294760.391440    5020 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+Exception ignored in: <generator object BoardTransmission._request_generator at 0x7ffef02cdb40>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 979, in run
+    del self._target, self._args, self._kwargs
+        ^^^^^^^^^^^^
+RuntimeError: generator ignored GeneratorExit
+[2:12:01.206712054] [5298] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[2:12:01.216620499] [5309] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[2:12:01.219700678] [5309] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[2:12:01.226568870] [5309] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[2:12:01.226601056] [5309] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media1 and ISP device /dev/media3 using PiSP variant BCM2712_D0
+[2:12:01.226649834] [5309] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[2:12:01.228182414] [5309] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[2:12:01.235071903] [5309] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[2:12:01.235101940] [5309] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media2 and ISP device /dev/media4 using PiSP variant BCM2712_D0
+[2:12:01.238133766] [5298] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[2:12:01.238242878] [5309] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[2:12:01.800280917] [5298] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[2:12:01.800395029] [5309] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764300665.490277    5338 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+Exception ignored in: <generator object BoardTransmission._request_generator at 0x7fff3c6b1b40>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 979, in run
+    del self._target, self._args, self._kwargs
+        ^^^^^^^^^^^^
+RuntimeError: generator ignored GeneratorExit
+[2:48:17.596451733] [5393] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[2:48:17.606243275] [5404] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[2:48:17.609196787] [5404] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[2:48:17.616087261] [5404] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[2:48:17.616119779] [5404] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media1 and ISP device /dev/media3 using PiSP variant BCM2712_D0
+[2:48:17.616169891] [5404] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[2:48:17.617694027] [5404] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[2:48:17.624644834] [5404] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[2:48:17.624674204] [5404] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media2 and ISP device /dev/media4 using PiSP variant BCM2712_D0
+[2:48:17.627794495] [5393] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[2:48:17.627902718] [5404] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[2:48:18.188304824] [5393] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[2:48:18.188519566] [5404] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764302841.879760    5434 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+Exception ignored in: <generator object BoardTransmission._request_generator at 0x7fff0d640540>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 979, in run
+    del self._target, self._args, self._kwargs
+        ^^^^^^^^^^^^
+RuntimeError: generator ignored GeneratorExit
+[2:48:54.366566657] [5466] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[2:48:54.376464698] [5477] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[2:48:54.379546267] [5477] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[2:48:54.386637815] [5477] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[2:48:54.386666815] [5477] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media1 and ISP device /dev/media3 using PiSP variant BCM2712_D0
+[2:48:54.386721408] [5477] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[2:48:54.388254970] [5477] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[2:48:54.395136833] [5477] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[2:48:54.395163462] [5477] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media2 and ISP device /dev/media4 using PiSP variant BCM2712_D0
+[2:48:54.398223346] [5466] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[2:48:54.398334216] [5477] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[2:48:54.972315672] [5466] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[2:48:54.972433062] [5477] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764302878.659110    5506 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+[3:12:16.720390868] [5560] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[3:12:16.730078248] [5571] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[3:12:16.733018928] [5571] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[3:12:16.740326204] [5571] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[3:12:16.740359204] [5571] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media1 and ISP device /dev/media3 using PiSP variant BCM2712_D0
+[3:12:16.740407111] [5571] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[3:12:16.741932378] [5571] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[3:12:16.748911374] [5571] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[3:12:16.748942004] [5571] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media2 and ISP device /dev/media4 using PiSP variant BCM2712_D0
+[3:12:16.752029926] [5560] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[3:12:16.752139852] [5571] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[3:12:17.332259070] [5560] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[3:12:17.332374830] [5571] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764304281.030637    5600 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+Exception ignored in: <generator object BoardTransmission._request_generator at 0x7fff5e030540>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 979, in run
+    del self._target, self._args, self._kwargs
+        ^^^^^^^^^^^^
+RuntimeError: generator ignored GeneratorExit
+Exception ignored in: <generator object BoardTransmission._request_generator at 0x7fff5e031940>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 979, in run
+    del self._target, self._args, self._kwargs
+        ^^^^^^^^^^^^
+RuntimeError: generator ignored GeneratorExit
+[3:33:21.315699121] [5648] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[3:33:21.325601230] [5659] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[3:33:21.328671154] [5659] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[3:33:21.335486413] [5659] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[3:33:21.335517709] [5659] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media1 and ISP device /dev/media3 using PiSP variant BCM2712_D0
+[3:33:21.335565376] [5659] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[3:33:21.337100551] [5659] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[3:33:21.344061515] [5659] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[3:33:21.344089422] [5659] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media2 and ISP device /dev/media4 using PiSP variant BCM2712_D0
+[3:33:21.347103846] [5648] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[3:33:21.347209087] [5659] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[3:33:21.944290115] [5648] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[3:33:21.944403819] [5659] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764305545.635280    5689 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+Exception ignored in: <generator object BoardTransmission._request_generator at 0x7fff25970540>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 979, in run
+    del self._target, self._args, self._kwargs
+        ^^^^^^^^^^^^
+RuntimeError: generator ignored GeneratorExit
+[3:34:13.369536885] [5719] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[3:34:13.379280845] [5730] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[3:34:13.382234471] [5730] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[3:34:13.389064008] [5730] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[3:34:13.389096082] [5730] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media1 and ISP device /dev/media3 using PiSP variant BCM2712_D0
+[3:34:13.389142749] [5730] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[3:34:13.390674072] [5730] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[3:34:13.397728591] [5730] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[3:34:13.397758869] [5730] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media2 and ISP device /dev/media4 using PiSP variant BCM2712_D0
+[3:34:13.400884423] [5719] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[3:34:13.400986887] [5730] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[3:34:13.972310981] [5719] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[3:34:13.972524871] [5730] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+Exception ignored in: <generator object BoardTransmission._request_generator at 0x7fff44200540>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 979, in run
+    del self._target, self._args, self._kwargs
+        ^^^^^^^^^^^^
+RuntimeError: generator ignored GeneratorExit
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764305597.671153    5759 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+[3:39:55.245587305] [5789] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[3:39:55.255342947] [5800] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[3:39:55.258282721] [5800] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[3:39:55.265135274] [5800] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[3:39:55.265166441] [5800] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media1 and ISP device /dev/media3 using PiSP variant BCM2712_D0
+[3:39:55.265212682] [5800] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[3:39:55.266735708] [5800] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[3:39:55.273678595] [5800] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[3:39:55.273706392] [5800] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media2 and ISP device /dev/media4 using PiSP variant BCM2712_D0
+[3:39:55.276831130] [5789] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[3:39:55.276936519] [5800] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[3:39:55.864289812] [5789] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[3:39:55.864403368] [5800] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764305939.554839    5829 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+[4:05:48.195233369] [5887] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[4:05:48.205190123] [5898] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[4:05:48.208317232] [5898] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[4:05:48.215738936] [5898] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[4:05:48.215766529] [5898] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media1 and ISP device /dev/media3 using PiSP variant BCM2712_D0
+[4:05:48.215813325] [5898] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[4:05:48.217358944] [5898] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[4:05:48.224485869] [5898] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[4:05:48.224512462] [5898] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media2 and ISP device /dev/media4 using PiSP variant BCM2712_D0
+[4:05:48.227579922] [5887] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[4:05:48.227688608] [5898] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[4:05:48.828269504] [5887] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[4:05:48.828381652] [5898] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764307492.517597    5928 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+Exception ignored in: <generator object BoardTransmission._request_generator at 0x7fff641d1940>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 979, in run
+    del self._target, self._args, self._kwargs
+        ^^^^^^^^^^^^
+RuntimeError: generator ignored GeneratorExit
+Exception ignored in: <generator object BoardTransmission._request_generator at 0x7fff641d0540>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 979, in run
+    del self._target, self._args, self._kwargs
+        ^^^^^^^^^^^^
+RuntimeError: generator ignored GeneratorExit
+[4:12:15.486322389] [5969] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[4:12:15.496096474] [5980] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[4:12:15.499018100] [5980] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[4:12:15.506071338] [5980] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[4:12:15.506097209] [5980] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media1 and ISP device /dev/media3 using PiSP variant BCM2712_D0
+[4:12:15.506142728] [5980] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[4:12:15.507660772] [5980] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[4:12:15.514644992] [5980] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[4:12:15.514669955] [5980] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media2 and ISP device /dev/media4 using PiSP variant BCM2712_D0
+[4:12:15.517801193] [5969] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[4:12:15.517905971] [5980] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[4:12:16.088229848] [5969] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[4:12:16.088337330] [5980] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764307879.784358    6009 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+Exception ignored in: <generator object BoardTransmission._request_generator at 0x7fff3b671940>
+Traceback (most recent call last):
+Exception ignored in: <generator object BoardTransmission._request_generator at 0x7fff3b670540>
+  File "/usr/lib/python3.11/threading.py", line 979, in run
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 979, in run
+    del self._target, self._args, self._kwargs
+        ^^^^^^^^^^^^
+RuntimeError: generator ignored GeneratorExit
+    del self._target, self._args, self._kwargs
+        ^^^^^^^^^^^^
+RuntimeError: generator ignored GeneratorExit
+[4:45:52.297412751] [6061] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[4:45:52.307203542] [6072] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[4:45:52.310183706] [6072] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[4:45:52.317106427] [6072] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[4:45:52.317131279] [6072] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media1 and ISP device /dev/media3 using PiSP variant BCM2712_D0
+[4:45:52.317177391] [6072] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[4:45:52.318692769] [6072] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[4:45:52.325639546] [6072] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[4:45:52.325663990] [6072] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media2 and ISP device /dev/media4 using PiSP variant BCM2712_D0
+[4:45:52.328724821] [6061] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[4:45:52.328831433] [6072] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[4:45:52.888275069] [6061] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[4:45:52.888381940] [6072] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+Exception ignored in: <generator object BoardTransmission._request_generator at 0x7fff624d0540>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 979, in run
+    del self._target, self._args, self._kwargs
+        ^^^^^^^^^^^^
+RuntimeError: generator ignored GeneratorExit
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764309896.677816    6102 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+[4:48:52.466060971] [6132] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[4:48:52.475983763] [6143] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[4:48:52.479064149] [6143] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[4:48:52.485918647] [6143] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[4:48:52.485943425] [6143] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media1 and ISP device /dev/media3 using PiSP variant BCM2712_D0
+[4:48:52.485989388] [6143] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[4:48:52.487515359] [6143] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[4:48:52.494320912] [6143] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[4:48:52.494345505] [6143] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media2 and ISP device /dev/media4 using PiSP variant BCM2712_D0
+[4:48:52.497383854] [6132] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[4:48:52.497486725] [6143] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[4:48:53.060267246] [6132] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[4:48:53.060374228] [6143] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+Exception ignored in: <generator object BoardTransmission._request_generator at 0x7ffea8a10540>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 979, in run
+    del self._target, self._args, self._kwargs
+        ^^^^^^^^^^^^
+RuntimeError: generator ignored GeneratorExit
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764310076.952141    6172 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+[4:54:13.943716180] [6204] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[4:54:13.953626100] [6215] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[4:54:13.956697116] [6215] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[4:54:13.963592965] [6215] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[4:54:13.963619058] [6215] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media1 and ISP device /dev/media3 using PiSP variant BCM2712_D0
+[4:54:13.963664373] [6215] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[4:54:13.965194251] [6215] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[4:54:13.972128453] [6215] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[4:54:13.972153472] [6215] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media2 and ISP device /dev/media4 using PiSP variant BCM2712_D0
+[4:54:13.975220746] [6204] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[4:54:13.975321469] [6215] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[4:54:14.544336015] [6204] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[4:54:14.544444293] [6215] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764310398.236602    6244 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+Exception ignored in: <generator object BoardTransmission._request_generator at 0x7ffe9bf91940>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 979, in run
+Exception ignored in: <generator object BoardTransmission._request_generator at 0x7ffe9bf90540>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 979, in run
+    del self._target, self._args, self._kwargs
+        ^^^^^^^^^^^^
+RuntimeError: generator ignored GeneratorExit
+    del self._target, self._args, self._kwargs
+        ^^^^^^^^^^^^
+RuntimeError: generator ignored GeneratorExit
+[5:25:50.768655480] [6306] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[5:25:50.778358973] [6317] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[5:25:50.781314598] [6317] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[5:25:50.788177318] [6317] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[5:25:50.788204077] [6317] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media1 and ISP device /dev/media3 using PiSP variant BCM2712_D0
+[5:25:50.788249466] [6317] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[5:25:50.789768029] [6317] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[5:25:50.796782231] [6317] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[5:25:50.796806990] [6317] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media2 and ISP device /dev/media4 using PiSP variant BCM2712_D0
+[5:25:50.799840505] [6306] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[5:25:50.799941784] [6317] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[5:25:51.368312203] [6306] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[5:25:51.368420537] [6317] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764312295.058004    6346 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+Exception ignored in: <generator object BoardTransmission._request_generator at 0x7fff68710540>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 979, in run
+Exception ignored in: <generator object BoardTransmission._request_generator at 0x7fff68711940>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 979, in run
+    del self._target, self._args, self._kwargs
+        ^^^^^^^^^^^^
+RuntimeError: generator ignored GeneratorExit
+    del self._target, self._args, self._kwargs
+        ^^^^^^^^^^^^
+RuntimeError: generator ignored GeneratorExit
+[5:28:08.938207997] [6375] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[5:28:08.948146269] [6386] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[5:28:08.951054246] [6386] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[5:28:08.958112078] [6386] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[5:28:08.958138263] [6386] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media1 and ISP device /dev/media3 using PiSP variant BCM2712_D0
+[5:28:08.958183948] [6386] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[5:28:08.959698845] [6386] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[5:28:08.966625453] [6386] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[5:28:08.966650731] [6386] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media2 and ISP device /dev/media4 using PiSP variant BCM2712_D0
+[5:28:08.969783413] [6375] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[5:28:08.969884840] [6386] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[5:28:09.540250732] [6375] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[5:28:09.540357455] [6386] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764312433.232727    6415 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+Exception ignored in: <generator object BoardTransmission._request_generator at 0x7ffef4f71b40>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 979, in run
+    del self._target, self._args, self._kwargs
+        ^^^^^^^^^^^^
+RuntimeError: generator ignored GeneratorExit
+[0:07:20.279635777] [2165] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[0:07:20.290283774] [2176] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[0:07:20.293210094] [2176] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[0:07:20.300249818] [2176] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[0:07:20.300285130] [2176] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media3 and ISP device /dev/media0 using PiSP variant BCM2712_D0
+[0:07:20.300330831] [2176] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[0:07:20.301852764] [2176] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[0:07:20.308796977] [2176] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[0:07:20.308821308] [2176] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media4 and ISP device /dev/media2 using PiSP variant BCM2712_D0
+[0:07:20.311846436] [2165] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[0:07:20.311942670] [2176] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[0:07:20.888216205] [2165] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[0:07:20.888324328] [2176] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764324225.477993    2205 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+[0:11:46.604974783] [2618] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[0:11:46.614811600] [2629] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[0:11:46.617752847] [2629] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[0:11:46.624670989] [2629] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[0:11:46.624703617] [2629] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media3 and ISP device /dev/media0 using PiSP variant BCM2712_D0
+[0:11:46.624751689] [2629] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[0:11:46.626271550] [2629] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[0:11:46.633300890] [2629] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[0:11:46.633330222] [2629] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media4 and ISP device /dev/media2 using PiSP variant BCM2712_D0
+[0:11:46.636451534] [2618] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[0:11:46.636560157] [2629] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[0:11:47.216315008] [2618] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[0:11:47.216428261] [2629] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+Exception ignored in: <generator object BoardTransmission._request_generator at 0x7ffe8afc0540>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 979, in run
+    del self._target, self._args, self._kwargs
+        ^^^^^^^^^^^^
+RuntimeError: generator ignored GeneratorExit
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+Exception ignored in: <generator object BoardTransmission._request_generator at 0x7ffe8afc1040>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 979, in run
+    del self._target, self._args, self._kwargs
+        ^^^^^^^^^^^^
+RuntimeError: generator ignored GeneratorExit
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764324654.462998    2661 chttp2_transport.cc:1341] ipv4:10.42.0.1:50051: Got goaway [11] err=UNAVAILABLE:GOAWAY received; Error code: 11; Debug Text: too_many_pings {grpc_status:14, http2_error:11}
+E0000 00:00:1764324654.463320    2661 chttp2_transport.cc:1370] ipv4:10.42.0.1:50051: Received a GOAWAY with error code ENHANCE_YOUR_CALM and debug data equal to "too_many_pings". Current keepalive time (before throttling): 30000ms
+[0:24:39.191269891] [2768] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[0:24:39.201076504] [2779] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[0:24:39.203994604] [2779] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[0:24:39.210848915] [2779] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[0:24:39.210881858] [2779] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media3 and ISP device /dev/media0 using PiSP variant BCM2712_D0
+[0:24:39.210929670] [2779] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[0:24:39.212470975] [2779] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[0:24:39.219557848] [2779] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[0:24:39.219589901] [2779] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media4 and ISP device /dev/media2 using PiSP variant BCM2712_D0
+[0:24:39.222708787] [2768] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[0:24:39.222813892] [2779] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[0:24:39.804288994] [2768] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[0:24:39.804400229] [2779] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+Exception ignored in: <generator object BoardTransmission._request_generator at 0x7ffeb7930540>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 979, in run
+    del self._target, self._args, self._kwargs
+        ^^^^^^^^^^^^
+RuntimeError: generator ignored GeneratorExit
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764325264.132069    2808 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+[1:01:44.068735409] [6912] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[1:01:44.078479180] [6923] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[1:01:44.081435579] [6923] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[1:01:44.088514134] [6923] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[1:01:44.088548801] [6923] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media3 and ISP device /dev/media0 using PiSP variant BCM2712_D0
+[1:01:44.088597301] [6923] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[1:01:44.090109445] [6923] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[1:01:44.097083111] [6923] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[1:01:44.097114111] [6923] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media4 and ISP device /dev/media2 using PiSP variant BCM2712_D0
+[1:01:44.100443899] [6912] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[1:01:44.100551621] [6923] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[1:01:44.680333772] [6912] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[1:01:44.680446198] [6923] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764327488.993759    6954 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+Traceback (most recent call last):
+  File "/home/xaqxaq/glaux_camera_display/camera_client_grpc_hud.py", line 14, in <module>
+    from board_transmission import BoardTransmission
+  File "/home/xaqxaq/glaux_camera_display/board_transmission.py", line 517
+    """AppComm SendJSON으로 들어온 최신 JSON 반환"""
+    ^
+IndentationError: expected an indented block after function definition on line 516
+Traceback (most recent call last):
+  File "/home/xaqxaq/glaux_camera_display/camera_client_grpc_hud.py", line 14, in <module>
+    from board_transmission import BoardTransmission
+  File "/home/xaqxaq/glaux_camera_display/board_transmission.py", line 517
+    """AppComm SendJSON으로 들어온 최신 JSON 반환"""
+    ^
+IndentationError: expected an indented block after function definition on line 516
+Traceback (most recent call last):
+  File "/home/xaqxaq/glaux_camera_display/camera_client_grpc_hud.py", line 14, in <module>
+    from board_transmission import BoardTransmission
+  File "/home/xaqxaq/glaux_camera_display/board_transmission.py", line 517
+    """AppComm SendJSON으로 들어온 최신 JSON 반환"""
+    ^
+IndentationError: expected an indented block after function definition on line 516
+[5:56:51.640646020] [13359] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[5:56:51.651624721] [13370] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[5:56:51.654563085] [13370] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[5:56:51.661423294] [13370] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[5:56:51.661457220] [13370] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media0 and ISP device /dev/media2 using PiSP variant BCM2712_D0
+[5:56:51.661505683] [13370] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[5:56:51.663029383] [13370] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[5:56:51.670036999] [13370] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[5:56:51.670068518] [13370] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media4 and ISP device /dev/media3 using PiSP variant BCM2712_D0
+[5:56:51.673233197] [13359] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[5:56:51.673343011] [13370] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[5:56:53.518549330] [13359] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[5:56:53.518703552] [13370] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764577473.480951   13401 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+[6:16:16.721519014] [13995] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[6:16:16.731282550] [14007] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[6:16:16.734285656] [14007] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[6:16:16.741467679] [14007] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[6:16:16.741617956] [14007] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media0 and ISP device /dev/media2 using PiSP variant BCM2712_D0
+[6:16:16.741748197] [14007] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[6:16:16.743405249] [14007] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[6:16:16.750541254] [14007] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[6:16:16.750684827] [14007] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media4 and ISP device /dev/media3 using PiSP variant BCM2712_D0
+[6:16:16.753843821] [13995] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[6:16:16.754035024] [14007] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[6:16:18.716811465] [13995] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[6:16:18.717119409] [14007] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764578638.547837   14038 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+[6:20:16.388649443] [14083] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[6:20:16.398605146] [14094] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[6:20:16.401677511] [14094] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[6:20:16.408786423] [14094] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[6:20:16.408822756] [14094] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media0 and ISP device /dev/media2 using PiSP variant BCM2712_D0
+[6:20:16.408873293] [14094] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[6:20:16.410411031] [14094] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[6:20:16.417384128] [14094] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[6:20:16.417419091] [14094] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media4 and ISP device /dev/media3 using PiSP variant BCM2712_D0
+[6:20:16.420623140] [14083] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[6:20:16.420912362] [14094] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[6:20:18.085794477] [14083] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[6:20:18.086223495] [14094] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764578877.932019   14125 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+[6:30:29.640902353] [14173] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[6:30:29.650705248] [14184] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[6:30:29.653671744] [14184] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[6:30:29.660612151] [14184] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[6:30:29.660649395] [14184] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media0 and ISP device /dev/media2 using PiSP variant BCM2712_D0
+[6:30:29.660697121] [14184] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[6:30:29.662222965] [14184] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[6:30:29.669299012] [14184] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[6:30:29.669333052] [14184] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media4 and ISP device /dev/media3 using PiSP variant BCM2712_D0
+[6:30:29.672469562] [14173] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[6:30:29.672677227] [14184] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[6:30:31.536627708] [14173] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[6:30:31.536965291] [14184] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764579491.404828   14215 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+[8:21:33.423308007] [15494] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[8:21:33.433130924] [15505] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[8:21:33.436081829] [15505] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[8:21:33.443158900] [15505] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10' for pipeline handler rpi/pisp
+[8:21:33.443194845] [15505] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 to CFE device /dev/media0 and ISP device /dev/media2 using PiSP variant BCM2712_D0
+[8:21:33.443242291] [15505] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+[8:21:33.444805300] [15505] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/pisp/imx219.json
+[8:21:33.451832685] [15505] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10' for pipeline handler rpi/pisp
+[8:21:33.451864260] [15505] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1179 [0mRegistered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 to CFE device /dev/media4 and ISP device /dev/media3 using PiSP variant BCM2712_D0
+[8:21:33.454913241] [15494] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[8:21:33.455130022] [15505] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+[8:21:35.197608533] [15494] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 1640x1232-XBGR8888/Rec709/Rec709/None/Full (1) 640x480-RGB888/Rec709/Rec709/None/Full (2) 1640x1232-BGGR_PISP_COMP1/RAW
+[8:21:35.197971669] [15505] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1483 [0mSensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-xaqxaq'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764586155.049822   15536 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers

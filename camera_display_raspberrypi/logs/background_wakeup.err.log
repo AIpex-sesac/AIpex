@@ -1,0 +1,3 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1764578873.308928   14070 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+I0000 00:00:1764579486.546195   14070 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers

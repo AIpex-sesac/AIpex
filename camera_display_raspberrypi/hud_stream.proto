@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package hud;
+
+service HudService {
+  // 클라이언트가 요청하면 서버가 연속으로 HudFrame을 전송(서버 스트리밍)
+  rpc StreamHud(HudRequest) returns (stream HudFrame);
+}
+
+message HudRequest {
+  // 원하면 초당 프레임 지정
+  uint32 target_fps = 1;
+}
+
+message HudFrame {
+  bytes jpeg = 1;
+  uint64 ts = 2; // unix epoch ms
+}

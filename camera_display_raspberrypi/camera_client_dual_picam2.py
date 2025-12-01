@@ -8,7 +8,6 @@
 # - FRONT HUD : 항상 전체화면 (480x320로 리사이즈)
 #   + 우측 상단에 X1200 배터리 퍼센트 표시 (퍼센트 + 4칸 배터리 아이콘)
 #   + 좌측 상단에 REAR 카메라 실영상 + 디텍팅 박스(PIP)
-#   + 하단에 방위각 눈금자(스케일) 표시 (5° 눈금, 10° 숫자)
 #   + 최종 HUD 화면 전체 좌우 반전 (버드베스/HUD 반사용)
 # -------------------------------------------
 
@@ -66,11 +65,6 @@ rear_lock  = threading.Lock()
 
 rear_frame: np.ndarray | None = None
 rear_frame_lock = threading.Lock()
-
-# ====== 방위각 (폰에서 받아올 값; 지금은 테스트용 애니메이션) ======
-heading_deg: float = 0.0
-heading_lock = threading.Lock()
-HEADING_SPEED_DEG_PER_SEC = 30.0  # 테스트용: 초당 30도 회전 (원하면 조절)
 
 # ====== X1200 배터리 퍼센트 읽기 ======
 I2C_BUS_ID = 1       # /dev/i2c-1
@@ -186,137 +180,13 @@ def draw_battery_overlay(frame: np.ndarray, level: int | None) -> np.ndarray:
 
     return frame
 
-# ====== 방위각 눈금자 오버레이 ======
-def draw_heading_scale(frame: np.ndarray, heading_deg: float) -> np.ndarray:
-    """
-    화면 하단에 방위각 눈금자 / 삼각형 / 현재 각도 숫자를 그린다.
-    heading_deg : 0~360 (0=북쪽 기준이라고 가정)
-    """
-    h, w, _ = frame.shape
-    green = (0, 255, 0)
-
-    band_h = 16          # 눈금 세로 높이
-    px_per_deg = 4       # 1도당 몇 픽셀 이동할지(가로 스케일)
-
-    # ✅ 좌우 마진 (전체 폭의 30%씩 비우기)
-    side_margin = int(w * 0.30)
-    left_bound  = side_margin
-    right_bound = w - side_margin
-
-    center_x = w // 2
-    margin_bottom = 20   # 화면 맨 아래로부터 여유
-    y0 = h - band_h - margin_bottom   # 눈금의 최상단 y
-
-    font = cv2.FONT_HERSHEY_SIMPLEX
-
-    # 화면에 그릴 수 있는 최대 degree offset (= 사용 가능한 폭 기준)
-    usable_w = right_bound - left_bound
-    max_offset = int((usable_w / 2) / px_per_deg) + 2
-
-    # ==== 눈금 그리기 (현재 heading 기준 좌우로) ====
-    for offset in range(-max_offset, max_offset + 1):
-        deg = (heading_deg + offset) % 360.0
-        x = int(center_x + offset * px_per_deg)
-
-        # ✅ 좌우 마진 안쪽에서만 그리기
-        if x < left_bound or x >= right_bound:
-            continue
-
-        d_int = int(round(deg))
-
-        # 기본: 아무 것도 안 그림
-        draw_tick = False
-        length = band_h - 16  # 거의 0
-
-        # 5° 단위 눈금
-        if d_int % 5 == 0:
-            length = band_h - 14  # 짧은 눈금
-            draw_tick = True
-
-        # 10° 단위 눈금 (조금 더 길게)
-        if d_int % 10 == 0:
-            length = band_h - 10
-            draw_tick = True
-
-        if draw_tick:
-            y1 = y0
-            y2 = y0 + length
-            cv2.line(frame, (x, y1), (x, y2), green, 1, cv2.LINE_AA)
-
-            # 10도 단위 숫자 표시 (눈금 아래)
-            if d_int % 10 == 0:
-                label = str(d_int % 360)
-                font_scale = 0.45
-                t_thick = 1
-                (tw, th), _ = cv2.getTextSize(label, font, font_scale, t_thick)
-                tx = x - tw // 2
-                ty = y2 + th + 2
-                cv2.putText(
-                    frame,
-                    label,
-                    (tx, ty),
-                    font,
-                    font_scale,
-                    green,
-                    t_thick,
-                    cv2.LINE_AA,
-                )
-
-    # ==== 중앙 삼각형 마커 (▼ 아래로 향하도록, 눈금 위에) ====
-    tri_height = 10
-    offset_above_scale = 8     # 눈금과 삼각형 사이 거리
-    base_y = max(0, y0 - offset_above_scale - tri_height)  # 삼각형 윗변 y
-    tip_y  = base_y + tri_height                           # ▼ 아래 꼭짓점 y
-
-    pts = np.array(
-        [
-            [center_x - 6, base_y],   # 왼쪽 위
-            [center_x + 6, base_y],   # 오른쪽 위
-            [center_x,     tip_y],    # 아래 꼭짓점
-        ],
-        dtype=np.int32,
-    )
-    cv2.fillConvexPoly(frame, pts, green)
-
-    # ==== 현재 heading 숫자를 "삼각형 위"에 배치 ====
-    cur_label = f"{int(round(heading_deg)) % 360}"
-    font_scale = 0.6
-    t_thick = 2
-    (tw, th), _ = cv2.getTextSize(cur_label, font, font_scale, t_thick)
-
-    tx = center_x - tw // 2
-    ty = max(th + 2, base_y - 6)
-
-    cv2.putText(
-        frame,
-        cur_label,
-        (tx, ty),
-        font,
-        font_scale,
-        (0, 0, 0),
-        t_thick + 2,
-        cv2.LINE_AA,
-    )
-    cv2.putText(
-        frame,
-        cur_label,
-        (tx, ty),
-        font,
-        font_scale,
-        green,
-        t_thick,
-        cv2.LINE_AA,
-    )
-
-    return frame
-
 # ====== 카메라 + 소켓 스레드 (Picamera2) ======
 def camera_thread_picam(cam_name: str,
                         cam_index: int,
                         port: int,
                         result_ref: dict,
                         lock: threading.Lock):
-    global rear_frame, heading_deg
+    global rear_frame
 
     print(f"[B][{cam_name}] Starting Picamera2 index {cam_index} ...")
 
@@ -328,9 +198,6 @@ def camera_thread_picam(cam_name: str,
     picam.configure(config)
     picam.start()
     time.sleep(0.5)
-
-    # FRONT 카메라일 때 방위각 업데이트용 시간 기준
-    last_t = time.time()
 
     sock = None
     try:
@@ -352,19 +219,9 @@ def camera_thread_picam(cam_name: str,
             # 여기서는 드라이버가 주는 포맷 그대로 사용
             frame_bgr = frame_rgb
 
-            # REAR 카메라는 PIP용 프레임 저장
             if cam_name.upper() == "REAR":
                 with rear_frame_lock:
                     rear_frame = frame_bgr.copy()
-
-            # FRONT 카메라일 때 방위각을 시간 기반으로 업데이트
-            if cam_name.upper() == "FRONT":
-                now = time.time()
-                dt = now - last_t
-                last_t = now
-                with heading_lock:
-                    heading_deg = (heading_deg +
-                                   HEADING_SPEED_DEG_PER_SEC * dt) % 360.0
 
             if sock is not None:
                 try:
@@ -460,7 +317,7 @@ def render_black_canvas_from_result(result: dict) -> np.ndarray:
 
 # ====== 메인 (HUD 렌더 루프) ======
 def main():
-    global front_result, rear_result, rear_frame, heading_deg
+    global front_result, rear_result, rear_frame
 
     t_front = threading.Thread(
         target=camera_thread_picam,
@@ -491,16 +348,10 @@ def main():
     while True:
         now = time.time()
 
-        # --- 배터리 ---
         if now - last_batt_read_time > 1.0:
             batt_percent_cached = get_battery_percentage()
             last_batt_read_time = now
 
-        # --- heading: 카메라 스레드에서 업데이트된 값 읽기 ---
-        with heading_lock:
-            cur_heading = heading_deg
-
-        # --- FRONT ---
         with front_lock:
             fr = dict(front_result)
 
@@ -512,13 +363,10 @@ def main():
         )
         front_canvas_fs = draw_battery_overlay(front_canvas_fs, batt_percent_cached)
 
-        # 방위각 스케일 오버레이
-        front_canvas_fs = draw_heading_scale(front_canvas_fs, cur_heading)
-
         # ---------- 좌측 상단 REAR 카메라 PIP ----------
         with rear_frame_lock:
             if rear_frame is None:
-                # rear_frame 없을 때도 HUD 전체 좌우 반전
+                # ✅ HUD 전체 좌우 반전 (rear_frame 없을 때도)
                 flipped = cv2.flip(front_canvas_fs, 1)
                 cv2.imshow("Front HUD", flipped)
                 if cv2.waitKey(1) & 0xFF == 27:
@@ -526,8 +374,9 @@ def main():
                 continue
             rf = rear_frame.copy()
 
-        # 방향 보정: 180도 회전 + 좌우반전
+        # 방향 보정: 180도 회전만
         rf = cv2.rotate(rf, cv2.ROTATE_180)
+        # 좌우 반전
         rf = cv2.flip(rf, 1)
 
         with rear_lock:
@@ -539,7 +388,7 @@ def main():
             interpolation=cv2.INTER_LINEAR
         )
 
-        # Rear PIP 테두리 (빨간색)
+        # 🔲 Rear PIP 테두리 (빨간색)
         cv2.rectangle(rear_resized, (0, 0), (PIP_W - 1, PIP_H - 1), (0, 0, 255), 2)
 
         rw = rr.get("width", 640)
@@ -585,7 +434,7 @@ def main():
         if pip_h_eff > 0 and pip_w_eff > 0:
             front_canvas_fs[PIP_Y:y_end, PIP_X:x_end] = rear_resized[:pip_h_eff, :pip_w_eff]
 
-        # 최종 HUD 전체 좌우 반전 (버드베스 / HUD 반사용)
+        # ✅ 최종 HUD 전체 좌우 반전 (버드베스 / HUD 반사용)
         hud_flipped = cv2.flip(front_canvas_fs, 1)
 
         cv2.imshow("Front HUD", hud_flipped)

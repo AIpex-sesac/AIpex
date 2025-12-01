@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/xaqxaq/glaux_camera_display/camera_client_grpc_hud.py", line 15, in <module>
+    from board_transmission import BoardTransmission
+  File "/home/xaqxaq/glaux_camera_display/board_transmission.py", line 3, in <module>
+    from data_types_pb2 import CameraFrame, Command, ServerMessage
+  File "/home/xaqxaq/glaux_camera_display/data_types_pb2.py", line 7, in <module>
+    from google.protobuf import descriptor as _descriptor
+ModuleNotFoundError: No module named 'google'

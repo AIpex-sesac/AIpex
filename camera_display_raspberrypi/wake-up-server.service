@@ -1,0 +1,16 @@
+[Unit]
+Description=WakeUp listener gRPC Server
+After=network.target
+
+[Service]   
+User=xaqxaq
+WorkingDirectory=/home/xaqxaq/glaux_camera_display
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/xaqxaq/.Xauthority
+ExecStart=/bin/bash -c "source .env/bin/activate; python3 background_wakeup.py"
+
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package wakemeup;
+
+import "google/protobuf/empty.proto";
+
+service WakeUpService {
+    rpc TriggerScript (WakeUpRequest) returns (WakeUpResponse);
+    rpc IsDisplayOn (google.protobuf.Empty) returns (DisplayState);
+    rpc TriggerShutdown (OrderShutdown) returns (google.protobuf.Empty);
+}
+
+message WakeUpRequest {
+    string script_name = 1;
+    string args = 2;
+}
+
+message WakeUpResponse {
+    bool success = 1;
+    string message = 2;
+    int32 process_id = 3;
+}
+
+message DisplayState {
+    bool on = 1;
+    string info = 2; // 추가 설명(예: "xset: Monitor is On" 또는 오류 메시지)
+}
+
+message OrderShutdown {
+    string order = 1;
+}

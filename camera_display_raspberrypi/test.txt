@@ -1,0 +1,4 @@
+[BoardTransmission] Raw JSON received: {"detections":[{"class":"person","class_id":1,"score":0.0030,"bbox":{"x_min":0.9370,"y_min":-0.0000,"x_max":1.0008,"y_max":0.0499}}],"count":1}
+QStandardPaths: wrong permissions on runtime directory /run/user/1000, 0770 instead of 0700
+QStandardPaths: wrong permissions on runtime directory /run/user/1000, 0770 instead of 0700
+libpng warning: iCCP: known incorrect sRGB profile
