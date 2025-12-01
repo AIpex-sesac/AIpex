@@ -2,10 +2,10 @@
 ## 팀원 소개
   | Name | Role | Repository |
   |----|----|----|
-  | 남대문 | Development |----|
-  | 성시경 | Data management, 3D Modeling |----|
-  | 장태규 | Project lead, Architect |https://github.com/AIpex-sesac/AIpex_fw|
-  | 최종인 | UI design, Development |https://github.com/AIpex-sesac/AIpex_app|
+  | 남대문 | Development ||
+  | 성시경 | Data management, 3D Modeling ||
+  | 장태규 | Project lead, Architect |[Firmware](https://github.com/AIpex-sesac/AIpex_fw)|
+  | 최종인 | UI design, Development |[App](https://github.com/AIpex-sesac/AIpex_app)|
 
 ## 개요
 <img src="./sources/logo/logo_2.svg?raw=true" width="200px"/>
