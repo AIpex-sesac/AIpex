@@ -186,3 +186,6 @@ python demo.py -i xxx -m yyy -d zzz
 * Min sam (https://www.youtube.com/@minsam7010)
 * 전자공시시스템 (https://dart.fss.or.kr)
 * 2024년 교통사고정보 (출처 : 도로교통공단)
+
+## 공유 폴더
+(https://drive.google.com/drive/folders/1Qj72MTF6LtFqe8MISK7nzGTvX0vuPtUF)
