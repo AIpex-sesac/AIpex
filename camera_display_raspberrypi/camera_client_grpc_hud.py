@@ -11,6 +11,7 @@ import numpy as np
 import threading
 import time
 import json  # ← nav_json 문자열 처리용
+import os
 from picamera2 import Picamera2
 from board_transmission import BoardTransmission
 import smbus2
@@ -19,6 +20,76 @@ from concurrent import futures as _futures
 import hud_stream_pb2 as hud_pb2
 import hud_stream_pb2_grpc as hud_pb2_grpc
 import grpc
+
+# ================= NAV ICON 설정 =================
+# 아이콘 폴더 경로
+NAV_ICON_DIR = os.path.expanduser("~/glaux_camera_display/nav_icons")
+
+# 아이콘 캐시
+_nav_icon_cache = {}
+
+def load_nav_icon(nav_type: int, target_size=(48, 48)):
+    """
+    nav_type에 해당하는 PNG 아이콘을 로드해서 (h, w, 4) BGRA로 반환.
+    파일 이름은 "<코드>.png" 규칙 (예: 1.png, 2.png ...)
+    """
+    if nav_type in _nav_icon_cache:
+        icon = _nav_icon_cache[nav_type]
+    else:
+        filename = f"{nav_type}.png"
+        path = os.path.join(NAV_ICON_DIR, filename)
+
+        icon = cv2.imread(path, cv2.IMREAD_UNCHANGED)  # BGRA로 읽기
+        if icon is None:
+            print(f"[HUD] Nav icon not found for type {nav_type}: {path}")
+            _nav_icon_cache[nav_type] = None
+            return None
+
+        _nav_icon_cache[nav_type] = icon
+
+    if icon is None:
+        return None
+
+    if target_size is not None:
+        icon = cv2.resize(icon, target_size, interpolation=cv2.INTER_AREA)
+
+    return icon
+
+
+def overlay_icon_rgba(dst_bgr: np.ndarray, icon_rgba: np.ndarray, x: int, y: int):
+    """
+    dst_bgr(BGR)에 BGRA 아이콘을 (x, y)에 알파 블렌딩으로 합성.
+    """
+    h, w = icon_rgba.shape[:2]
+
+    # 화면 밖이면 무시
+    if x >= dst_bgr.shape[1] or y >= dst_bgr.shape[0]:
+        return
+    if x + w <= 0 or y + h <= 0:
+        return
+
+    # 클리핑
+    x1 = max(x, 0)
+    y1 = max(y, 0)
+    x2 = min(x + w, dst_bgr.shape[1])
+    y2 = min(y + h, dst_bgr.shape[0])
+
+    icon_x1 = x1 - x
+    icon_y1 = y1 - y
+    icon_x2 = icon_x1 + (x2 - x1)
+    icon_y2 = icon_y1 + (y2 - y1)
+
+    roi = dst_bgr[y1:y2, x1:x2]
+    icon_part = icon_rgba[icon_y1:icon_y2, icon_x1:icon_x2]
+
+    # BGRA 분리
+    icon_bgr = icon_part[..., :3].astype(np.float32)
+    alpha = icon_part[..., 3:].astype(np.float32) / 255.0  # (h, w, 1)
+
+    roi = roi.astype(np.float32)
+
+    blended = alpha * icon_bgr + (1.0 - alpha) * roi
+    dst_bgr[y1:y2, x1:x2] = blended.astype(np.uint8)
 
 # === 전송용 카메라 래퍼: capture_array 결과를 회전시켜서 반환 ===
 class RotatedCamera:
@@ -498,7 +569,7 @@ def main():
     front_cam = Picamera2(0)
     front_config = front_cam.create_video_configuration(
         main={"size": (1640, 1232)},                      # 디텍션용 원본 (A 파이로 전송)
-        lores={"size": (640, 480), "format": "RGB888"}    # 필요하면 HUD용으로도 쓸 수 있음
+        lores={"size": (SCREEN_W, SCREEN_H), "format": "RGB888"}  # ★ HUD 베이스용 해상도 변경
     )
     front_cam.configure(front_config)
     front_cam.start()
@@ -513,7 +584,7 @@ def main():
                                            camera_id=0)
     front_transmission.connect()
     time.sleep(1.0)
-    front_transmission.start_streaming(start_app_server=True)  # app server은 이 인스턴스만 시작
+    front_transmission.start_streaming(start_app_server=True)
 
     # REAR 카메라 설정
     print("[Main] Initializing REAR camera...")
@@ -577,6 +648,13 @@ def main():
             now = time.time()
             frame_count += 1
 
+            # ★ FRONT 카메라 실제 프레임 캡처 (lores 스트림 사용)
+            front_raw_frame = front_cam.capture_array("lores")
+            # front_display_base = front_raw_frame
+            # ★ HUD 표시용 방향 보정 (lores는 회전 안되어 있으므로)
+            front_display_base = cv2.rotate(front_raw_frame, cv2.ROTATE_180)
+            # front_display_base = cv2.cvtColor(front_display_base, cv2.COLOR_RGB2BGR)
+            
             # 배터리
             if now - last_batt_read_time > 1.0:
                 batt_percent_cached = get_battery_percentage()
@@ -585,12 +663,8 @@ def main():
             # 1) FRONT detection 결과
             front_result = front_transmission.get_detection_result() or {}
 
-            # 2) AppComm로 들어온 내비 JSON (문자열 → dict 변환 포함)
+            # 2) AppComm로 들어온 내비 JSON
             nav_json = get_nav_json(front_transmission)
-
-            # 디버깅: nav_json이 비어있지 않을 때 몇 번만 출력
-            if nav_json:
-                print(f"[NAV] nav_json = {nav_json}")
 
             # heading 우선순위: App → detection_result
             heading_src = (
@@ -622,8 +696,78 @@ def main():
                 print(f"[MAIN] First detection: {front_result['detections'][0]}")
                 debug_count += 1
 
-            front_canvas = render_detections_on_black(front_result)
-            front_canvas_fs = cv2.resize(front_canvas, (SCREEN_W, SCREEN_H), interpolation=cv2.INTER_LINEAR)
+            # ★ HUD 디스플레이용: 검은 배경에 detection 박스만 (기존 동작 유지)
+            front_canvas_fs = render_detections_on_black(front_result)
+            front_canvas_fs = cv2.resize(front_canvas_fs, (SCREEN_W, SCREEN_H), interpolation=cv2.INTER_LINEAR)
+
+            # ★ 50055 스트리밍용: 실제 카메라 배경 + UI 합성 (별도 생성)
+            stream_canvas = front_display_base.copy()
+
+            # Detection 박스를 실제 카메라 프레임 위에 그리기
+            detections = front_result.get("detections", [])
+            for det in detections:
+                bbox = det.get("bbox", {})
+                x_min_norm = float(bbox.get("x_min", 0))
+                y_min_norm = float(bbox.get("y_min", 0))
+                x_max_norm = float(bbox.get("x_max", 0))
+                y_max_norm = float(bbox.get("y_max", 0))
+
+                x1 = int(x_min_norm * SCREEN_W)
+                y1 = int(y_min_norm * SCREEN_H)
+                x2 = int(x_max_norm * SCREEN_W)
+                y2 = int(y_max_norm * SCREEN_H)
+
+                cls_name = det.get("class", "obj")
+                conf = float(det.get("score", 0.0))
+
+                if x2 <= x1 or y2 <= y1:
+                    continue
+
+                # 반투명 박스 배경
+                overlay = stream_canvas.copy()
+                cv2.rectangle(overlay, (x1, y1), (x2, y2), (0, 255, 0), -1)
+                cv2.addWeighted(overlay, 0.2, stream_canvas, 0.8, 0, stream_canvas)
+                
+                # 박스 테두리
+                cv2.rectangle(stream_canvas, (x1, y1), (x2, y2), (0, 255, 0), 4)
+
+                font = cv2.FONT_HERSHEY_SIMPLEX
+                font_scale = 0.8
+                thickness = 2
+
+                cx = (x1 + x2) // 2
+
+                # 클래스네임: 박스 위 중앙
+                class_label = cls_name
+                (cw, ch), _ = cv2.getTextSize(class_label, font, font_scale, thickness)
+                class_x = cx - cw // 2
+                class_y = y1 - 10
+                class_x = max(0, min(class_x, SCREEN_W - cw))
+                class_y = max(ch + 5, class_y)
+
+                # 텍스트 배경
+                cv2.rectangle(stream_canvas, 
+                            (class_x - 5, class_y - ch - 5),
+                            (class_x + cw + 5, class_y + 5),
+                            (0, 0, 0), -1)
+                cv2.putText(stream_canvas, class_label, (class_x, class_y),
+                          font, font_scale, (0, 255, 0), thickness, cv2.LINE_AA)
+
+                # 점수: 박스 아래 중앙
+                score_label = f"{conf:.2f}"
+                (sw, sh), _ = cv2.getTextSize(score_label, font, font_scale, thickness)
+                score_x = cx - sw // 2
+                score_y = y2 + sh + 10
+                score_x = max(0, min(score_x, SCREEN_W - sw))
+
+                cv2.rectangle(stream_canvas,
+                            (score_x - 5, score_y - sh - 5),
+                            (score_x + sw + 5, score_y + 5),
+                            (0, 0, 0), -1)
+                cv2.putText(stream_canvas, score_label, (score_x, score_y),
+                          font, font_scale, (0, 255, 0), thickness, cv2.LINE_AA)
+
+            # ★ HUD 디스플레이용 UI 오버레이 (검은 배경)
             front_canvas_fs = draw_battery_overlay(front_canvas_fs, batt_percent_cached)
             front_canvas_fs = draw_heading_scale(front_canvas_fs, cur_heading)
             front_canvas_fs = draw_nav_info(
@@ -633,6 +777,50 @@ def main():
                 speed=nav_speed,
                 eta=nav_eta,
             )
+
+            # ★ 스트리밍용 UI 오버레이 (실제 카메라 배경)
+            stream_canvas = draw_battery_overlay(stream_canvas, batt_percent_cached)
+            stream_canvas = draw_heading_scale(stream_canvas, cur_heading)
+            stream_canvas = draw_nav_info(
+                stream_canvas,
+                instruction=nav_instruction,
+                remaining_distance=nav_remaining_distance,
+                speed=nav_speed,
+                eta=nav_eta,
+            )
+
+            # nav 아이콘 추가
+            nav_type = None
+            try:
+                # 우선 AppComm JSON에서 type 읽고, 없으면 detection_result 쪽에서 fallback
+                t = nav_json.get("type", front_result.get("type"))
+                if t is not None:
+                    nav_type = int(t)
+            except (ValueError, TypeError):
+                nav_type = None
+
+            # # ====== ★ 디버그용: nav_type이 없으면 임시로 11번 아이콘 강제 표시 ======
+            # if nav_type is None:
+            #     nav_type = 8   # ← 여기 숫자를 바꿔가면서 11,12,13,... 아이콘 크기/모양 확인
+            # # ===========================================================
+
+            if nav_type is not None and nav_type > 0:
+                icon = load_nav_icon(nav_type, target_size=(128, 128))
+                if icon is not None:
+                    ih, iw = icon.shape[:2]
+
+                    # 배터리 바로 아래에 붙이기
+                    ICON_MARGIN_RIGHT = 12   # 배터리 margin(8)이랑 맞춰줌
+                    BATTERY_TOP = 8         # draw_battery_overlay에서 y1 = margin = 8
+                    BATTERY_HEIGHT = 18     # bw, bh = 70, 18 → 높이 18
+                    ICON_GAP = 6            # 배터리와 아이콘 사이 간격
+                    EXTRA_DOWN_OFFSET = 40  # 아이콘 내리기용
+                    icon_x = SCREEN_W - iw - ICON_MARGIN_RIGHT
+                    icon_y = BATTERY_TOP + BATTERY_HEIGHT + ICON_GAP + EXTRA_DOWN_OFFSET  # 8 + 18 + 6 = 32 근처
+
+                    # 검은 HUD용, 실제 카메라 HUD용 둘 다 아이콘 합성
+                    overlay_icon_rgba(front_canvas_fs, icon, icon_x, icon_y)
+                    overlay_icon_rgba(stream_canvas, icon, icon_x, icon_y)
 
             # REAR PIP
             if rear_camera_available and rear_transmission:
@@ -685,7 +873,7 @@ def main():
                         h_pip, w_pip, _ = rear_resized.shape
                         cx = (x1 + x2) // 2
 
-                        # ===== 클래스네임: 박스 위 중앙 =====
+                        # 클래스네임: 박스 위 중앙
                         class_label = cls_name
                         (cw, ch), _ = cv2.getTextSize(class_label, font, font_scale, thickness)
                         class_x = cx - cw // 2
@@ -704,7 +892,7 @@ def main():
                             cv2.LINE_AA,
                         )
 
-                        # ===== 점수: 박스 아래 중앙 =====
+                        # 점수: 박스 아래 중앙
                         score_label = f"{conf:.2f}"
                         (sw, sh), _ = cv2.getTextSize(score_label, font, font_scale, thickness)
                         score_x = cx - sw // 2
@@ -740,7 +928,7 @@ def main():
                     if (now - last_rear_detection_time) < REAR_PIP_HOLD_SEC:
                         pip_img = rear_resized
 
-                # 실제로 PIP를 HUD 위에 합성
+                # PIP를 HUD 디스플레이와 스트리밍 양쪽에 합성
                 if pip_img is not None:
                     y_end = min(PIP_Y + PIP_H, SCREEN_H)
                     x_end = min(PIP_X + PIP_W, SCREEN_W)
@@ -749,26 +937,25 @@ def main():
 
                     if pip_h_eff > 0 and pip_w_eff > 0:
                         front_canvas_fs[PIP_Y:y_end, PIP_X:x_end] = pip_img[:pip_h_eff, :pip_w_eff]
+                        stream_canvas[PIP_Y:y_end, PIP_X:x_end] = pip_img[:pip_h_eff, :pip_w_eff]
                     
-                    # rear 방향 화살표: front 검은 화면 좌/우 중단
+                    # rear 방향 화살표: 양쪽 캔버스 모두에 그리기
                     h_f, w_f, _ = front_canvas_fs.shape
                     mid_y = h_f // 2
 
-                    arrow_len = int(min(w_f, h_f) * 0.18)  # 화살표 전체 크기
+                    arrow_len = int(min(w_f, h_f) * 0.18)
                     half_w = arrow_len // 2
                     half_h = arrow_len // 3
                     arrow_thick = 4
-                    arrow_color = (0, 0, 255)  # 빨간색 (BGR)
-                    margin = 20  # 화면 끝에서 약간 안쪽으로
+                    arrow_color = (0, 0, 255)
+                    margin = 20
 
-                    # 지금 시각 기준으로 화살표 활성 여부 (3초 이내 + 깜빡임)
                     left_age = now - last_rear_left_alert_time
                     right_age = now - last_rear_right_alert_time
 
                     left_active = left_age < ARROW_ALERT_HOLD_SEC
                     right_active = right_age < ARROW_ALERT_HOLD_SEC
 
-                    # 점멸: 주기 안에서 절반만 on
                     if left_active:
                         phase = left_age % ARROW_BLINK_PERIOD
                         left_draw_on = phase < (ARROW_BLINK_PERIOD / 2.0)
@@ -786,48 +973,55 @@ def main():
                         cx = margin + half_w
                         cy = mid_y
                         pts_left = np.array([
-                            [cx + half_w, cy - half_h],  # 오른쪽 위
-                            [cx + half_w, cy + half_h],  # 오른쪽 아래
-                            [cx - half_w, cy],           # 왼쪽 끝(화살촉)
+                            [cx + half_w, cy - half_h],
+                            [cx + half_w, cy + half_h],
+                            [cx - half_w, cy],
                         ], dtype=np.int32)
 
-                        cv2.polylines(
-                            front_canvas_fs,
-                            [pts_left],
-                            isClosed=True,
-                            color=arrow_color,
-                            thickness=arrow_thick,
-                            lineType=cv2.LINE_AA,
-                        )
+                        for canvas in [front_canvas_fs, stream_canvas]:
+                            cv2.polylines(
+                                canvas,
+                                [pts_left],
+                                isClosed=True,
+                                color=arrow_color,
+                                thickness=arrow_thick,
+                                lineType=cv2.LINE_AA,
+                            )
 
                     # → 오른쪽 화살표
                     if right_draw_on:
                         cx = w_f - margin - half_w
                         cy = mid_y
                         pts_right = np.array([
-                            [cx - half_w, cy - half_h],  # 왼쪽 위
-                            [cx - half_w, cy + half_h],  # 왼쪽 아래
-                            [cx + half_w, cy],           # 오른쪽 끝(화살촉)
+                            [cx - half_w, cy - half_h],
+                            [cx - half_w, cy + half_h],
+                            [cx + half_w, cy],
                         ], dtype=np.int32)
 
-                        cv2.polylines(
-                            front_canvas_fs,
-                            [pts_right],
-                            isClosed=True,
-                            color=arrow_color,
-                            thickness=arrow_thick,
-                            lineType=cv2.LINE_AA,
-                        )
+                        for canvas in [front_canvas_fs, stream_canvas]:
+                            cv2.polylines(
+                                canvas,
+                                [pts_right],
+                                isClosed=True,
+                                color=arrow_color,
+                                thickness=arrow_thick,
+                                lineType=cv2.LINE_AA,
+                            )
                         
             # 좌우 반전 + 180도 회전 (HUD용)
+            # HUD 디스플레이용: 좌우 반전 + 180도 회전
             hud_flipped = cv2.flip(front_canvas_fs, 1)
             hud_flipped = cv2.rotate(hud_flipped, cv2.ROTATE_180)
 
             cv2.imshow("Front HUD", hud_flipped)
 
-            # JPEG로 인코딩해서 모든 구독자에게 전달
+            # ★ 50055 스트리밍용: 실제 카메라 배경 위 UI를 JPEG로 인코딩
+            # stream_flipped = cv2.flip(stream_canvas, 1)
+            # stream_flipped = cv2.rotate(stream_flipped, cv2.ROTATE_180)
+            stream_flipped = stream_canvas
+             
             try:
-                ok, enc = cv2.imencode('.jpg', hud_flipped, [int(cv2.IMWRITE_JPEG_QUALITY), 60])
+                ok, enc = cv2.imencode('.jpg', stream_flipped, [int(cv2.IMWRITE_JPEG_QUALITY), 85])
                 if ok:
                     jpeg_bytes = enc.tobytes()
                     ts_ms = int(time.time() * 1000)
@@ -836,14 +1030,12 @@ def main():
                             try:
                                 q.put_nowait((jpeg_bytes, ts_ms))
                             except queue.Full:
-                                # 구독자 큐가 가득하면 오래된 프레임 대체 전략 없음 -> 스킵
                                 pass
             except Exception as e:
                 print(f"[HUD] Failed to encode/broadcast HUD frame: {e}")
 
             if cv2.waitKey(1) & 0xFF == 27:
                 break
-
     finally:
         # 정리
         if hud_server:
